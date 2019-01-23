@@ -1,3 +1,10 @@
+# v3.0.0
+## 01/22/2019
+
+1. [](#improved)
+    * Dropped grav support
+    * Added pelican support
+
 # v2.1.2
 ## 9/28/2017
 
