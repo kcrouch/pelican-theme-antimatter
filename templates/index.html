@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Dwelling of Duels Entry! “Adventures in Battlerock Galaxy&quot; from Super Mario Galaxy | Hat&#039;s Loft</title>
-    <meta name="generator" content="GravCMS" />
-<meta name="description" content="Hat&#039;s Musical Adventures Video Game Music" />
-<meta name="author" content="hat" />
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    <meta name="description" content="Hat&#039;s Musical Adventures in Video Game Music" />
+    <meta name="author" content="hat" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/image/favicon.png" />
     <link rel="canonical" href="index.html" />
 
 <link href="/theme/css/pure-0.5.0/grids-min.css" type="text/css" rel="stylesheet" />
@@ -28,7 +27,7 @@
     <div id="sb-site">
                 <header id="header">
             <div id="logo">
-                <h3><a href="index.html">Hat's Loft</a></h3>
+                <h3><a href="index.html">{{ SITENAME }}</a></h3>
             </div>
             <div id="navbar">
                                                                 
@@ -40,7 +39,7 @@
             </li>
                                 <li class="active">
                 <a href="index.html">
-                                        Hat's Loft
+                                        {{ SITENAME }}
                 </a>
             </li>
                     </ul>
@@ -52,7 +51,7 @@
         
                 <section id="body" class="">
 
-                               <div class="flush-top blog-header blog-header-image" style="background-image: url(/images/orchestra-master1050.jpeg);">
+                               <div class="flush-top blog-header blog-header-image" style="background-image: url(/image/orchestra-master1050.jpeg);">
 
                 </div>
 
@@ -78,7 +77,7 @@
 {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}" class="p-category">{{ tag | escape }}</a> {% endfor %}
                     </span>
 {% endif %}
-                                                                    <img alt="" src="/images/17-08-space.jpeg" />
+                                                                    <img alt="Cover Art" src="/image/{{ article.slug }}.jpeg" />
         
     </div>
 
@@ -96,31 +95,15 @@
 {% endblock content %}
 
 
-
 			<div id="sidebar" class="block size-1-3 pure-u-1-3">
 				
 <div class="sidebar-content">
     <h4>Popular Tags</h4>
     
 <span class="tags">
-                    <a class="" href="./tag:Recording.html">Recording</a>
-                    <a class="" href="./tag:Music.html">Music</a>
-                    <a class="" href="./tag:Dwelling&#32;of&#32;Duels.html">Dwelling of Duels</a>
-                    <a class="" href="./tag:Jazz.html">Jazz</a>
-                    <a class="" href="./tag:Materia&#32;Collective.html">Materia Collective</a>
-                    <a class="" href="./tag:Performance.html">Performance</a>
-                    <a class="" href="./tag:Atlanta&#32;Symphony&#32;Orchestra&#32;&amp;&#32;Chorus.html">Atlanta Symphony Orchestra &amp; Chorus</a>
-                    <a class="" href="./tag:Patient&#32;Corgi.html">Patient Corgi</a>
-                    <a class="" href="./tag:Starcraft.html">Starcraft</a>
-                    <a class="" href="./tag:Cartoon.html">Cartoon</a>
-                    <a class="" href="./tag:Indian&#32;Classical.html">Indian Classical</a>
-                    <a class="" href="./tag:Zelda.html">Zelda</a>
-                    <a class="" href="./tag:Coin&#32;Op&#32;Co.html">Coin Op Co</a>
-                    <a class="" href="./tag:Funk.html">Funk</a>
-                    <a class="" href="./tag:Game&#32;Music&#32;4&#32;All.html">Game Music 4 All</a>
-                    <a class="" href="./tag:40-16.html">40-16</a>
-                    <a class="" href="./tag:Viking&#32;Guitar.html">Viking Guitar</a>
-                    <a class="" href="./tag:Uncategorized.html">Uncategorized</a>
+    {% for tag, articles in tags|sort %}
+                    <a class="" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+    {% endfor %}
     </span>
 </div>
 			</div>
@@ -128,10 +111,10 @@
 	        </section>
         
                 <footer id="footer">
+{% include 'pagination.html' %}
             <div class="totop">
                 <span><a href="{{ SITEURL }}" id="toTop"><i class="fa fa-arrow-up"></i></a></span>
             </div>
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
         </footer>
             </div>
             <div class="sb-slidebar sb-left sb-width-thin">
@@ -145,7 +128,7 @@
             </li>
                                 <li class="active">
                 <a href="index.html">
-                                        Hat's Loft
+                                        {{ SITENAME }}
                 </a>
             </li>
                     </ul>
