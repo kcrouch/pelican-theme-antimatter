@@ -19,9 +19,16 @@
 
     {{ page.content }}
 
+<script>
+   $(document).ready(function () {
+      $("table").attr("class","table table-condensed table-bordered");
+   });
+</script>
+
     {% if page.modified %}
         <p>
         Last updated: {{ page.locale_modified }}
         </p>
     {% endif %}
 {% endblock %}
+
